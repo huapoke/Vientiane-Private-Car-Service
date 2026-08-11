@@ -115,6 +115,11 @@
             box-shadow: 0 0 12px rgba(170,93,198,0.5);
             transform: translateY(-2px);
         }
+        .btn-primary:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(170,93,198,0.8), 0 0 12px rgba(170,93,198,0.5);
+            transform: translateY(-2px);
+        }
         /* Text-only contact buttons */
         .contact-btn-wa {
             background: linear-gradient(135deg, #075E54, #128C7E);
@@ -125,6 +130,12 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37,211,102,0.3);
         }
+        .contact-btn-wa:focus-visible {
+            outline: none;
+            background: #25D366;
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 3px #25D366, 0 8px 20px rgba(37,211,102,0.3);
+        }
         .contact-btn-line {
             background: linear-gradient(135deg, #00B900, #06C755);
             transition: all 0.3s;
@@ -133,6 +144,12 @@
             background: #00C300;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(6,199,85,0.3);
+        }
+        .contact-btn-line:focus-visible {
+            outline: none;
+            background: #00C300;
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 3px #00C300, 0 8px 20px rgba(6,199,85,0.3);
         }
         .contact-btn-gmail {
             background: linear-gradient(135deg, #3A3A3A, #2C2C2C);
@@ -143,11 +160,24 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(234,67,53,0.3);
         }
+        .contact-btn-gmail:focus-visible {
+            outline: none;
+            background: #EA4335;
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 3px #EA4335, 0 8px 20px rgba(234,67,53,0.3);
+        }
         /* Optional floating corner widgets (minimal) */
         .floating-corner {
             background: rgba(22,12,61,0.7);
             backdrop-filter: blur(8px);
             border: 1px solid #504D9C;
+            transition: all 0.2s ease;
+        }
+        .floating-corner:focus-visible {
+            outline: none;
+            border-color: #AA5DC6;
+            box-shadow: 0 0 0 3px rgba(170,93,198,0.8);
+            transform: scale(1.1);
         }
         @media (max-width: 640px) {
             .glass-card {
@@ -179,7 +209,7 @@
 
                 <!-- Pick-up Location -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Pick-up Location</label>
+                    <label for="pickupLocation" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Pick-up Location</label>
                     <input type="text" id="pickupLocation" placeholder="e.g., Wattay Airport, Vientiane" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" 
                            value="Vientiane Center">
@@ -187,14 +217,14 @@
 
                 <!-- Drop-off Location -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Drop-off Location</label>
+                    <label for="dropoffLocation" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Drop-off Location</label>
                     <input type="text" id="dropoffLocation" placeholder="e.g., Hotel in Vang Vieng" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" value="">
                 </div>
 
                 <!-- Date & Time Picker -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Date & Time</label>
+                    <label for="dateTimePicker" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Date & Time</label>
                     <input type="datetime-local" id="dateTimePicker" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" 
                            value="2026-07-25T09:00">
@@ -202,7 +232,7 @@
 
                 <!-- Fixed Rate Route Dropdown (dark styled) -->
                 <div class="mb-6">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Select Fixed Rate Route (Optional)</label>
+                    <label for="routeSelect" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Select Fixed Rate Route (Optional)</label>
                     <select id="routeSelect" class="glass-select w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-purple-400 outline-none">
                         <option value="" data-price="0">-- Custom route (no fixed rate) --</option>
                         <option value="Vientiane to Vang Vieng" data-price="2200000">Vientiane to Vang Vieng – 2,200,000 Kip</option>
@@ -272,9 +302,9 @@
 
     <!-- Floating corner widgets (optional, minimal) -->
     <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-        <a href="https://wa.me/8562092934881" target="_blank" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">💬</a>
-        <a href="https://line.me/ti/p/~max19981023" target="_blank" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">📱</a>
-        <a href="mailto:senoco.advice@gmail.com" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">✉️</a>
+        <a href="https://wa.me/8562092934881" target="_blank" aria-label="Chat on WhatsApp" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">💬</a>
+        <a href="https://line.me/ti/p/~max19981023" target="_blank" aria-label="Message on LINE" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">📱</a>
+        <a href="mailto:senoco.advice@gmail.com" aria-label="Send an Email" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">✉️</a>
     </div>
 
     <!-- Booking Logic (WhatsApp integration, fixed rates, no gallery) -->
@@ -285,6 +315,46 @@
         const dateTimePicker = document.getElementById('dateTimePicker');
         const routeSelect = document.getElementById('routeSelect');
         const bookNowBtn = document.getElementById('bookNowBtn');
+
+        // Dynamically initialize minimum selectable datetime to prevent past bookings
+        function initializeMinDateTime() {
+            const now = new Date();
+            // Format to local ISO-like string for datetime-local input: YYYY-MM-DDTHH:MM
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const minDateTimeStr = `${year}-${month}-${day}T${hours}:${minutes}`;
+            dateTimePicker.min = minDateTimeStr;
+
+            // If existing value is in the past, update it
+            const currentValue = dateTimePicker.value;
+            if (currentValue && new Date(currentValue) < now) {
+                // Set default to 2 hours from now
+                const future = new Date(now.getTime() + 2 * 60 * 60 * 1000);
+                const fYear = future.getFullYear();
+                const fMonth = String(future.getMonth() + 1).padStart(2, '0');
+                const fDay = String(future.getDate()).padStart(2, '0');
+                const fHours = String(future.getHours()).padStart(2, '0');
+                const fMinutes = String(future.getMinutes()).padStart(2, '0');
+                dateTimePicker.value = `${fYear}-${fMonth}-${fDay}T${fHours}:${fMinutes}`;
+            }
+        }
+        initializeMinDateTime();
+
+        // Validate on change to make sure a valid future date is picked
+        dateTimePicker.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const now = new Date();
+            if (selectedDate < now) {
+                this.classList.add('border-red-500', 'ring-2', 'ring-red-500/50');
+                setTimeout(() => {
+                    initializeMinDateTime();
+                    this.classList.remove('border-red-500', 'ring-2', 'ring-red-500/50');
+                }, 1200);
+            }
+        });
 
         // Auto-fill drop-off when fixed route is selected
         routeSelect.addEventListener('change', function() {
