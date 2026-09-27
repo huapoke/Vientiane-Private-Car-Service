@@ -179,7 +179,7 @@
 
                 <!-- Pick-up Location -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Pick-up Location</label>
+                    <label for="pickupLocation" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Pick-up Location</label>
                     <input type="text" id="pickupLocation" placeholder="e.g., Wattay Airport, Vientiane" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" 
                            value="Vientiane Center">
@@ -187,14 +187,14 @@
 
                 <!-- Drop-off Location -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Drop-off Location</label>
+                    <label for="dropoffLocation" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Drop-off Location</label>
                     <input type="text" id="dropoffLocation" placeholder="e.g., Hotel in Vang Vieng" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" value="">
                 </div>
 
                 <!-- Date & Time Picker -->
                 <div class="mb-5">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Date & Time</label>
+                    <label for="dateTimePicker" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Date & Time</label>
                     <input type="datetime-local" id="dateTimePicker" 
                            class="dark-input w-full rounded-xl p-3 text-sm outline-none focus:ring-2 focus:ring-purple-400 transition" 
                            value="2026-07-25T09:00">
@@ -202,7 +202,7 @@
 
                 <!-- Fixed Rate Route Dropdown (dark styled) -->
                 <div class="mb-6">
-                    <label class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Select Fixed Rate Route (Optional)</label>
+                    <label for="routeSelect" class="text-xs uppercase tracking-wider text-gray-200 font-semibold block mb-1">Select Fixed Rate Route (Optional)</label>
                     <select id="routeSelect" class="glass-select w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-purple-400 outline-none">
                         <option value="" data-price="0">-- Custom route (no fixed rate) --</option>
                         <option value="Vientiane to Vang Vieng" data-price="2200000">Vientiane to Vang Vieng – 2,200,000 Kip</option>
@@ -272,9 +272,9 @@
 
     <!-- Floating corner widgets (optional, minimal) -->
     <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-        <a href="https://wa.me/8562092934881" target="_blank" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">💬</a>
-        <a href="https://line.me/ti/p/~max19981023" target="_blank" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">📱</a>
-        <a href="mailto:senoco.advice@gmail.com" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 transition">✉️</a>
+        <a href="https://wa.me/8562092934881" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:outline-none transition">💬</a>
+        <a href="https://line.me/ti/p/~max19981023" target="_blank" rel="noopener noreferrer" aria-label="Message on LINE" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:outline-none transition">📱</a>
+        <a href="mailto:senoco.advice@gmail.com" aria-label="Send an email" class="floating-corner rounded-full p-3 shadow-lg hover:scale-110 focus-visible:ring-2 focus-visible:ring-purple-400 focus-visible:outline-none transition">✉️</a>
     </div>
 
     <!-- Booking Logic (WhatsApp integration, fixed rates, no gallery) -->
