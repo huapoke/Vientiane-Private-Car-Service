@@ -1,0 +1,3 @@
+## 2026-11-06 - Accessible Floating Icon Actions and Form Labels
+**Learning:** Floating quick-contact widgets styled with plain emoji characters lack accessible names for assistive technologies, browser tooltip hints on hover, and clear focus-visible rings for keyboard users. Additionally, detached `<label>` elements without `for` attributes reduce tap target usability and prevent screen readers from properly announcing inputs.
+**Action:** When working on standalone static landing pages, wrap floating actions in an `<aside aria-label="...">` landmark, assign clear `aria-label` and `title` attributes with Tailwind `focus-visible:ring-2 focus-visible:outline-none`, and explicitly connect labels to inputs using matching `for` and `id` attributes.
